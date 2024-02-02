@@ -63,7 +63,7 @@ public class ForecastProvider {
                 .buildAndExpand(city.name())
                 .toUriString();
         try {
-            log.info("Fetching forecast data for URL: {}", url);
+            log.info("Fetching forecast data for city: {}", city.name());
             String response = restTemplate.getForObject(url, String.class);
             ForecastResponse forecastResponse = mapper.readValue(response, ForecastResponse.class);
             return forecastMapper.jsonToForecastResponse(forecastResponse);
