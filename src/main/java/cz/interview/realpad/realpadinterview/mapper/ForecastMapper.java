@@ -13,7 +13,7 @@ public interface ForecastMapper {
     @Mapping(target = "responseItems", source = "list")
     Forecast jsonToForecastResponse(ForecastResponse response);
 
-    @Mapping(target = "date", expression = "java(new Date(listItem.dt*1000))")
+    @Mapping(target = "date", expression = "java(new java.util.Date(listItem.getDt()*1000))")
     @Mapping(target = "temperature", source = "main.temp")
     @Mapping(target = "feelsLikeTemperature", source = "main.feels_like")
     @Mapping(target = "minTemperature", source = "main.temp_min")

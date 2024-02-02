@@ -1,21 +1,15 @@
 package cz.interview.realpad.realpadinterview.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public final class Forecast {
-    private final int counter;
-    private final List<ForecastItem> responseItems;
-
-    public Forecast(int counter, List<ForecastItem> responseItems) {
-        this.counter = counter;
-        this.responseItems = responseItems;
-    }
-
-    public int getCounter() {
-        return this.counter;
-    }
-
-    public List<ForecastItem> getResponseItems() {
-        return this.responseItems;
-    }
+    private int counter;
+    private List<ForecastItem> responseItems;
 }
